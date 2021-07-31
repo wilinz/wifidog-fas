@@ -22,11 +22,13 @@ $("#login-button").on("click", function () {
         type: "POST",
         url: "/fas/login",
         data: params.toString(),
-        success:function(data,textStatus,jqXHR){
-            showToast(data.msg);
-            if (data.code==200){
-                // window.location.replace(data.data)
-                window.location.href=data.data
+        success:function(resp,textStatus,jqXHR){
+            showToast(resp.msg);
+            if (resp.code==200){
+                var p=new URLSearchParams()
+                p.append("token",resp.data.token)
+                var url=`http://${GatewayAddress}:${GatewayPort}/wifidog/auth?${p.toString()}`
+                window.location.href=url
             }
         },
         error:function(xhr,error){

@@ -20,8 +20,6 @@ type WifiDogLogin struct {
 }
 
 type FasLogin struct {
-	GatewayAddress string `form:"gw_address"`
-	GatewayPort    int    `form:"gw_port"`
 	Username       string `form:"username"`
 	Password       string `form:"password"`
 	MAC            string `form:"mac"`

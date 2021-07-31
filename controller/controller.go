@@ -33,13 +33,13 @@ func Run() {
 	{
 		wifiDog.GET("/login", services.WifiDogLoginHandler)
 		wifiDog.GET("/auth/", services.WifiDogAuthHandler)
-		wifiDog.GET("/ping/",  services.WifiDogPingHandler)
+		wifiDog.GET("/ping/", services.WifiDogPingHandler)
 		wifiDog.GET("/portal", services.WifiDogPortalHandler)
 	}
 
 	fas := Router.Group("/fas")
 	{
-		fas.POST("/login",services.FasLoginHandler)
+		fas.POST("/login", services.FasLoginHandler)
 	}
 
 	err := Router.Run(":10010")
