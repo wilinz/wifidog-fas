@@ -39,7 +39,7 @@ func Run() {
 
 	fas := Router.Group("/fas")
 	{
-		fas.Any("/login",services.FasLoginHandler)
+		fas.POST("/login",services.FasLoginHandler)
 	}
 
 	err := Router.Run(":10010")

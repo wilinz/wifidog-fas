@@ -1,8 +1,32 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="BranchesTreeState">
+    <expand>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </expand>
+    <select />
+  </component>
   <component name="ChangeListManager">
     <list default="true" id="4bac27bb-ba46-45e9-bab8-73f4d53f1cb6" name="默认的" comment="">
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/controller/controller.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dao/dao.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/enum/enum.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/services/fas.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/services/wifidog.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main.go" beforeDir="false" afterPath="$PROJECT_DIR$/main.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/util.go" beforeDir="false" afterPath="$PROJECT_DIR$/util/util.go" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -37,15 +61,17 @@
     <property name="settings.editor.selected.configurable" value="yiiguxing.plugin.translate" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Users\Administrator\go\src\awesomeProject10\static" />
-    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\Administrator\go\src\awesomeProject10\static\css" />
       <recent name="C:\Users\Administrator\go\src\awesomeProject10\static" />
       <recent name="C:\Users\Administrator\go\src\awesomeProject10\templates" />
       <recent name="C:\Users\Administrator\go\src\awesomeProject10\static\img" />
       <recent name="C:\Users\Administrator\go\src\awesomeProject10" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Administrator\go\src\wifidog-fas\util" />
+      <recent name="C:\Users\Administrator\go\src\wifidog-fas\services" />
+      <recent name="C:\Users\Administrator\go\src\awesomeProject10\static" />
     </key>
   </component>
   <component name="RunManager" selected="Go 构建.go build wifidogfas">
@@ -104,6 +130,17 @@
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
   <component name="VgoProject">
     <integration-enabled>true</integration-enabled>
   </component>
@@ -112,28 +149,28 @@
       <screen x="0" y="0" width="1440" height="860" />
     </state>
     <state x="174" y="84" width="1092" height="718" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1440.860@0.0.1440.860" timestamp="1627713959878" />
-    <state width="1397" height="248" key="GridCell.Tab.0.bottom" timestamp="1627713851565">
+    <state width="1397" height="248" key="GridCell.Tab.0.bottom" timestamp="1627716356114">
       <screen x="0" y="0" width="1440" height="860" />
     </state>
-    <state width="1397" height="248" key="GridCell.Tab.0.bottom/0.0.1440.860@0.0.1440.860" timestamp="1627713851565" />
+    <state width="1397" height="248" key="GridCell.Tab.0.bottom/0.0.1440.860@0.0.1440.860" timestamp="1627716356114" />
     <state width="557" height="401" key="GridCell.Tab.0.bottom/0.0.600.1156@0.0.600.1156" timestamp="1627677559935" />
     <state width="557" height="401" key="GridCell.Tab.0.bottom/0.0.600.1216@0.0.600.1216" timestamp="1627675378563" />
-    <state width="1397" height="248" key="GridCell.Tab.0.center" timestamp="1627713851565">
+    <state width="1397" height="248" key="GridCell.Tab.0.center" timestamp="1627716356113">
       <screen x="0" y="0" width="1440" height="860" />
     </state>
-    <state width="1397" height="248" key="GridCell.Tab.0.center/0.0.1440.860@0.0.1440.860" timestamp="1627713851565" />
+    <state width="1397" height="248" key="GridCell.Tab.0.center/0.0.1440.860@0.0.1440.860" timestamp="1627716356113" />
     <state width="557" height="401" key="GridCell.Tab.0.center/0.0.600.1156@0.0.600.1156" timestamp="1627677559935" />
     <state width="557" height="401" key="GridCell.Tab.0.center/0.0.600.1216@0.0.600.1216" timestamp="1627675378563" />
-    <state width="1397" height="248" key="GridCell.Tab.0.left" timestamp="1627713851565">
+    <state width="1397" height="248" key="GridCell.Tab.0.left" timestamp="1627716356113">
       <screen x="0" y="0" width="1440" height="860" />
     </state>
-    <state width="1397" height="248" key="GridCell.Tab.0.left/0.0.1440.860@0.0.1440.860" timestamp="1627713851565" />
+    <state width="1397" height="248" key="GridCell.Tab.0.left/0.0.1440.860@0.0.1440.860" timestamp="1627716356113" />
     <state width="557" height="401" key="GridCell.Tab.0.left/0.0.600.1156@0.0.600.1156" timestamp="1627677559935" />
     <state width="557" height="401" key="GridCell.Tab.0.left/0.0.600.1216@0.0.600.1216" timestamp="1627675378563" />
-    <state width="1397" height="248" key="GridCell.Tab.0.right" timestamp="1627713851565">
+    <state width="1397" height="248" key="GridCell.Tab.0.right" timestamp="1627716356113">
       <screen x="0" y="0" width="1440" height="860" />
     </state>
-    <state width="1397" height="248" key="GridCell.Tab.0.right/0.0.1440.860@0.0.1440.860" timestamp="1627713851565" />
+    <state width="1397" height="248" key="GridCell.Tab.0.right/0.0.1440.860@0.0.1440.860" timestamp="1627716356113" />
     <state width="557" height="401" key="GridCell.Tab.0.right/0.0.600.1156@0.0.600.1156" timestamp="1627677559935" />
     <state width="557" height="401" key="GridCell.Tab.0.right/0.0.600.1216@0.0.600.1216" timestamp="1627675378563" />
     <state x="221" y="74" key="SettingsEditor" timestamp="1627714435503">
