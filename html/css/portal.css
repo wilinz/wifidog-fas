@@ -1,0 +1,14 @@
+body {
+    
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    background: url("https://cn.bing.com/th?id=OHR.BrightEye_EN-CN2384918996_1920x1080.jpg&rf=LaDigue_1920x1080.jpg&pid=hp");
+}
+
+.successful {
+    font-size: 30px;
+    text-align: center;
+    margin: 0 auto;
+    color: #fff;
+}

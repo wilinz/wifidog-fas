@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>登录</title>
+    <link rel="stylesheet" href="/html/css/reset.css">
+    <link rel="stylesheet" href="/html/css/login.css">
+</head>
+
+<body>
+    <div class="login-box">
+        <h1 class="login-text">登录</h1>
+        <input id="username" value="admin" name="username" type="text" placeholder="请输入账号" maxlength="20">
+        <input id="password" value="123456" name="password" type="password" placeholder="请输入密码" maxlength="20">
+        <button id="login-button">登录</button>
+    </div>
+
+    <script src="/html/js/sha256.min.js"></script>
+    <script src="/html/js/jquery-3.6.0.js"></script>
+    <script src="/html/js/login.js"></script>
+<script>
+    var GatewayAddress={{.GatewayAddress}};
+    var GatewayPort={{.GatewayPort}};
+    var MAC={{.MAC}};
+</script>
+</body>
+
+</html>
