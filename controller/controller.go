@@ -4,7 +4,8 @@ import (
 	"github.com/gin-gonic/gin"
 	"log"
 	"strconv"
-	"wifidogfas/services"
+	"wifidogfas/services/fas"
+	"wifidogfas/services/wifidog"
 )
 
 var Router = gin.Default()
@@ -31,15 +32,15 @@ func Run() {
 
 	wifiDog := Router.Group("/wifidog")
 	{
-		wifiDog.GET("/login", services.WifiDogLoginHandler)
-		wifiDog.GET("/auth/", services.WifiDogAuthHandler)
-		wifiDog.GET("/ping/", services.WifiDogPingHandler)
-		wifiDog.GET("/portal", services.WifiDogPortalHandler)
+		wifiDog.GET("/login", wifidog.LoginHandler)
+		wifiDog.GET("/auth/", wifidog.AuthHandler)
+		wifiDog.GET("/ping/", wifidog.PingHandler)
+		wifiDog.GET("/portal", wifidog.PortalHandler)
 	}
 
-	fas := Router.Group("/fas")
+	fasRouter := Router.Group("/fas")
 	{
-		fas.POST("/login", services.FasLoginHandler)
+		fasRouter.POST("/login", fas.LoginHandler)
 	}
 
 	err := Router.Run(":10010")

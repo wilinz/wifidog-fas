@@ -1,4 +1,4 @@
-package services
+package fas
 
 import (
 	"github.com/gin-gonic/gin"
@@ -6,7 +6,7 @@ import (
 	"wifidogfas/util"
 )
 
-func FasLoginHandler(c *gin.Context) {
+func LoginHandler(c *gin.Context) {
 	var loginForm dao.FasLogin
 	c.Bind(&loginForm)
 

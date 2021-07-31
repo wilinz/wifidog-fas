@@ -1,4 +1,4 @@
-package services
+package wifidog
 
 import (
 	"fmt"
@@ -8,7 +8,7 @@ import (
 	"wifidogfas/util"
 )
 
-func WifiDogAuthHandler(c *gin.Context) {
+func AuthHandler(c *gin.Context) {
 	var p dao.WifiDogAuth
 	c.Bind(&p)
 
@@ -29,16 +29,16 @@ func WifiDogAuthHandler(c *gin.Context) {
 
 }
 
-func WifiDogLoginHandler(c *gin.Context) {
+func LoginHandler(c *gin.Context) {
 	var params dao.WifiDogLogin
 	c.Bind(&params)
 	c.HTML(200, "login.html", &params)
 }
 
-func WifiDogPingHandler(c *gin.Context) {
+func PingHandler(c *gin.Context) {
 	c.String(200, "Pong")
 }
 
-func WifiDogPortalHandler(c *gin.Context) {
+func PortalHandler(c *gin.Context) {
 	c.HTML(200, "portal.html", nil)
 }
