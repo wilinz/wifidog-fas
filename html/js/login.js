@@ -14,8 +14,6 @@ $("#login-button").on("click", function () {
     var params=new URLSearchParams()
     params.append("username",username.val())
     params.append("password",sha256(password.val()))
-    params.append("gw_address",GatewayAddress)
-    params.append("gw_port",GatewayPort)
     params.append("mac",MAC)
 
     $.ajax({
