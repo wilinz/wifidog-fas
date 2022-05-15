@@ -29,11 +29,12 @@ func Run() {
 	Router.NoRoute(func(c *gin.Context) {
 		log.Println("请求不匹配路由", c.Request.URL)
 	})
-
+	//"/wifidog/gw_message?message=denied"
 	wifiDog := Router.Group("/wifidog")
 	{
 		wifiDog.GET("/login", wifidog.LoginHandler)
-		wifiDog.GET("/auth/", wifidog.AuthHandler)
+		wifiDog.POST("/auth/", wifidog.PostAuthHandler)
+		wifiDog.GET("/auth/", wifidog.GetAuthHandler)
 		wifiDog.GET("/ping/", wifidog.PingHandler)
 		wifiDog.GET("/portal", wifidog.PortalHandler)
 	}

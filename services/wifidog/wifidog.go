@@ -3,39 +3,60 @@ package wifidog
 import (
 	"fmt"
 	"github.com/gin-gonic/gin"
-	"wifidogfas/dao"
 	"wifidogfas/enum"
+	"wifidogfas/model"
 	"wifidogfas/util"
 )
 
-func AuthHandler(c *gin.Context) {
-	var p dao.WifiDogAuth
+func PostAuthHandler(c *gin.Context) {
+	var p model.AuthInfo
 	c.Bind(&p)
 
-	if p.Stage == "login" {
-		response := fmt.Sprint("Auth: ", enum.AuthTypes.AuthAllowed)
-		c.String(200, response)
-	} else {
-		fmt.Println("下载：", util.ConvertFlowUnit(p.Incoming), "上传：", util.ConvertFlowUnit(p.Outgoing))
+	fmt.Printf("%#v\n", p)
 
-		//下载超过300MB断网
-		if p.Incoming > 300*1024*1024 {
-			response := fmt.Sprint("Auth: ", enum.AuthTypes.AuthDenied)
-			c.String(200, response)
+	authOptions := make([]model.AuthOp, 0)
+	for _, client := range p.Clients {
+		fmt.Println("下载：", util.ConvertFlowUnit(client.Incoming), "上传：", util.ConvertFlowUnit(client.Outgoing))
+
+		authOption := &model.AuthOp{
+			ID:       client.ID,
+			AuthCode: enum.AuthTypes.AuthAllowed,
 		}
+		//下载超过300MB断网
+		//if client.Incoming > 1000*1024*1024 {
+		//	fmt.Println("断网")
+		//	authOption.AuthCode = enum.AuthTypes.AuthDenied
+		//}
 
-		c.String(200, "")
+		authOptions = append(authOptions, *authOption)
 	}
+	resp := &model.AuthResponse{
+		GwID:   p.GwID,
+		AuthOp: authOptions,
+	}
+	fmt.Printf("返回信息：%#v\n", resp)
+	c.JSON(200, resp)
+}
 
+func GetAuthHandler(c *gin.Context) {
+	var p model.AuthInfoQuery
+	c.BindQuery(&p)
+	fmt.Printf("%#v\n", p)
+	response := fmt.Sprint("Auth: ", enum.AuthTypes.AuthAllowed)
+	c.String(200, response)
 }
 
 func LoginHandler(c *gin.Context) {
-	var params dao.WifiDogLogin
-	c.Bind(&params)
+	var params model.WifiDogLogin
+	c.BindQuery(&params)
+	fmt.Printf("%#v\n", params)
 	c.HTML(200, "login.html", &params)
 }
 
 func PingHandler(c *gin.Context) {
+	info := new(model.PingInfo)
+	c.BindQuery(info)
+	fmt.Printf("%#v\n", info)
 	c.String(200, "Pong")
 }
 
